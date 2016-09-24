@@ -17,6 +17,7 @@ typedef struct{
 } tVaga;
 
 int cadastraMarca(char *p);
+void listaMarcas(char *p, int q);
 void cadastraModelo();
 void cadastraEntrada();
 void efetuaRetirada();
@@ -47,7 +48,8 @@ int main(){
 
 		switch(op){
 			case 1:
-				marcas += cadastraMarca(marca[marcas]);
+				if(marcas < 100)
+					marcas += cadastraMarca(marca[marcas]);
 				break;
 			case 2:
 				cadastraModelo();
@@ -74,6 +76,19 @@ int cadastraMarca(char *p){
 	gets(p);
 
 	return 1;
+}
+
+void listaMarcas(char *p, int q){
+	int i, j;
+	for(i = 0; i < q; i++){
+		printf("%d - ", i + 1);
+			for(j = i * 20; j < (i + 1) * 20; j++)
+				if(p[j] != '\0')
+					printf("%c", p[j]);
+				else
+					j = (i + 1) * 20;
+		printf("\n");
+	}
 }
 
 void cadastraModelo(){}
