@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <stdlib.h>
 
 typedef struct{
 	char marca[20];
@@ -15,7 +16,7 @@ typedef struct{
 	int minuto;
 } tVaga;
 
-void cadastraMarca();
+int cadastraMarca(char *p);
 void cadastraModelo();
 void cadastraEntrada();
 void efetuaRetirada();
@@ -26,8 +27,9 @@ int main(){
 	setlocale(LC_ALL,"");	//configura console para exibir caracteres especiais
 
 	int op = 0;
+	int marcas = 0;	// contador de marcas cadastradas
 
-	char marca[100][20];
+	char marca[100];
 	tModelo modelo[100];
 	tVaga vaga[100];
 
@@ -45,7 +47,7 @@ int main(){
 
 		switch(op){
 			case 1:
-				cadastraMarca();
+				marcas += cadastraMarca(marca[marcas]);
 				break;
 			case 2:
 				cadastraModelo();
@@ -66,7 +68,14 @@ int main(){
 	return 0;
 }
 
-void cadastraMarca(){}
+int cadastraMarca(char *p){
+	printf("Digite a marca: ");
+	fflush(stdin);
+	gets(p);
+
+	return 1;
+}
+
 void cadastraModelo(){}
 void cadastraEntrada(){}
 void efetuaRetirada(){}
