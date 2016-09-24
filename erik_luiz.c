@@ -36,14 +36,14 @@ int main(){
 
 	do{
 		system("cls");
-		printf("Selecione uma opção:\n\n");
+		printf("Selecione uma opÃ§Ã£o:\n\n");
 		printf("\t1 - Cadastrar marca\n");
 		printf("\t2 - Cadastrar modelo\n");
 		printf("\t3 - Cadastrar entrada\n");
 		printf("\t4 - Efetuar retirada\n");
 		printf("\t5 - Listar vagas ocupadas\n");
 		printf("\t0 - Encerrar programa\n\n");
-		printf("Sua opção: ");
+		printf("Sua opÃ§Ã£o: ");
 		scanf("%d", &op);
 
 		switch(op){
@@ -86,7 +86,7 @@ void listaMarcas(char *p, int q){
 				if(p[j] != '\0')
 					printf("%c", p[j]);
 				else
-					j = (i + 1) * 20;
+					break;
 		printf("\n");
 	}
 }
